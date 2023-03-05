@@ -13,7 +13,7 @@ which is explained in the following paper.
 
 ## Usage
 
-To use the PyTorch-based implementation of the amicable aid ([**code**](https://github.com/yupeeee/PyTools/blob/main/src/yupeeee_pytools/attacks/ifgsm.py)),
+To use the PyTorch-based implementation of the amicable aid <sup>[**src**](https://github.com/yupeeee/PyTools/blob/main/src/yupeeee_pytools/attacks/ifgsm.py)</sup>,
 download the [**yupeeee-pytools**](https://github.com/yupeeee/PyTools) package using the following command
 (**Manual installation of PyTorch is required**).
 
@@ -23,8 +23,6 @@ pip install yupeeee-pytools
 
 ### Example
 
-More detailed example can be found [**here**](https://github.com/yupeeee/PyTools/blob/main/examples/amicable_aid.py).
-
 ```
 import torch
 from torchvision import models
@@ -33,7 +31,7 @@ from torchvision.transforms import Normalize
 from yupeeee_pytools.attacks import IFGSM
 
 
-model = models.resnet50(weights=models.ResNet50_Weights.IMAGENET1K_V1).cuda()
+model = models.resnet50(weights=models.ResNet50_Weights.IMAGENET1K_V1).cuda().eval()
 normalizer = Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 
 ifgsm = IFGSM(
